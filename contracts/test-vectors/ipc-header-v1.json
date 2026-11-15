@@ -1,0 +1,18 @@
+{
+  "description": "V1 SET_SPEED frame header followed by an IEEE-754 binary64 payload containing 0.5",
+  "fields": {
+    "magic": "TTLE",
+    "protocolMajor": 1,
+    "protocolMinor": 2,
+    "headerBytes": 64,
+    "messageType": 5,
+    "flags": 0,
+    "payloadBytes": 8,
+    "sessionIdHex": "000102030405060708090a0b0c0d0e0f",
+    "requestId": "0x0102030405060708",
+    "commandSequence": 42,
+    "reservedHex": "000000000000000000000000",
+    "speed": 0.5
+  },
+  "frameHex": "54544c4501000200400005000000000008000000000102030405060708090a0b0c0d0e0f08070605040302012a00000000000000000000000000000000000000000000000000e03f"
+}

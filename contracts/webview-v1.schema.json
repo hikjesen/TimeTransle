@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://timetransle.local/contracts/webview-v1.schema.json",
+  "title": "TimeTransle WebView-to-Controller command V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "v",
+    "type",
+    "uiEpoch",
+    "uiSequence",
+    "targetGeneration",
+    "payload"
+  ],
+  "properties": {
+    "v": {
+      "const": 1
+    },
+    "type": {
+      "enum": [
+        "listProcesses",
+        "selectTarget",
+        "attachTarget",
+        "setSpeed",
+        "pause",
+        "resume",
+        "reset",
+        "getStatus",
+        "deactivate",
+        "relaunchElevated",
+        "openDiagnostics",
+        "launchProgram",
+        "saveCheckpoint",
+        "loadCheckpoint"
+      ]
+    },
+    "uiEpoch": {
+      "$ref": "#/$defs/identifier"
+    },
+    "uiSequence": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "targetGeneration": {
+      "$ref": "#/$defs/identifier"
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "selectTarget"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/selectTargetPayload"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "setSpeed"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/setSpeedPayload"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "listProcesses",
+              "attachTarget",
+              "pause",
+              "resume",
+              "reset",
+              "getStatus",
+              "deactivate",
+              "relaunchElevated",
+              "openDiagnostics"
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/emptyPayload"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[A-Za-z0-9-]+$"
+    },
+    "emptyPayload": {
+      "type": "object",
+      "additionalProperties": false,
+      "maxProperties": 0
+    },
+    "selectTargetPayload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "processId",
+        "creationTime"
+      ],
+      "properties": {
+        "processId": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4294967295
+        },
+        "creationTime": {
+          "type": "string",
+          "pattern": "^[0-9]+$",
+          "minLength": 1,
+          "maxLength": 20
+        }
+      }
+    },
+    "setSpeedPayload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "speed"
+      ],
+      "properties": {
+        "speed": {
+          "type": "number",
+          "minimum": 0.05,
+          "maximum": 8.0
+        }
+      }
+    }
+  }
+}

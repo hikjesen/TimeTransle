@@ -1,0 +1,16 @@
+EXPORTS
+    mono_get_root_domain
+    mono_thread_current
+    mono_thread_attach
+    mono_thread_detach
+    mono_assembly_foreach
+    mono_assembly_get_image
+    mono_class_from_name
+    mono_class_get_method_from_name
+    mono_lookup_internal_call
+    TimeTransleFakeMonoReset
+    TimeTransleFakeMonoThreadCurrentCalls
+    TimeTransleFakeMonoThreadAttachCalls
+    TimeTransleFakeMonoThreadDetachCalls
+    TimeTransleFakeMonoAssemblyForeachCalls
+    TimeTransleFakeMonoOrderViolations

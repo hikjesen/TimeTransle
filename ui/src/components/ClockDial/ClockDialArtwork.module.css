@@ -1,0 +1,58 @@
+.outerRing,
+.middleRing,
+.connector,
+.innerRing,
+.minuteHand path,
+.hourHand path {
+  fill: none;
+  stroke-linecap: butt;
+  stroke-linejoin: round;
+}
+
+.outerRing {
+  stroke-width: 13;
+}
+
+.middleRing {
+  stroke-width: 9;
+}
+
+.connector {
+  stroke-width: 9;
+}
+
+.innerRing {
+  stroke-width: 7;
+}
+
+.minuteHand path,
+.hourHand path {
+  stroke-width: 9;
+}
+
+.hub {
+  stroke: none;
+}
+
+.hubVoid {
+  stroke: none;
+}
+
+@media (forced-colors: active) {
+  .outerRing,
+  .middleRing,
+  .connector,
+  .innerRing,
+  .minuteHand path,
+  .hourHand path {
+    stroke: CanvasText;
+  }
+
+  .hub {
+    fill: CanvasText;
+  }
+
+  .hubVoid {
+    fill: Canvas;
+  }
+}

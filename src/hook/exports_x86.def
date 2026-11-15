@@ -1,0 +1,10 @@
+EXPORTS
+    TimeTransleInitialize=_TimeTransleInitialize@4
+    TimeTransleInitializeThread=_TimeTransleInitializeThread@4
+    TimeTransleSetSpeed=_TimeTransleSetSpeed@8
+    TimeTransleSetPaused=_TimeTransleSetPaused@4
+    TimeTransleReset=_TimeTransleReset@0
+    TimeTransleDeactivate=_TimeTransleDeactivate@0
+    TimeTransleGetState=_TimeTransleGetState@4
+    TimeTransleGetBuildId=_TimeTransleGetBuildId@8
+    TimeTransleGetApiVersion=_TimeTransleGetApiVersion@0

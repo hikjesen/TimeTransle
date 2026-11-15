@@ -1,0 +1,54 @@
+name: Windows
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  native:
+    name: Native ${{ matrix.architecture }}
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        architecture:
+          - x64
+          - x86
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake --preset windows-${{ matrix.architecture }}
+
+      - name: Build
+        run: cmake --build --preset windows-${{ matrix.architecture }}-debug
+
+      - name: Test
+        run: ctest --preset windows-${{ matrix.architecture }}-debug
+
+  ui:
+    name: UI
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: ui
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: ui/package-lock.json
+
+      - name: Install exact dependencies
+        run: npm ci
+
+      - name: Lint, test and build
+        run: npm run check
+

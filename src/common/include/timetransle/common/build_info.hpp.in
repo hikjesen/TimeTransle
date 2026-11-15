@@ -1,0 +1,14 @@
+#pragma once
+
+#include <string_view>
+
+namespace timetransle::build_info {
+
+inline constexpr std::string_view project_name{"@PROJECT_NAME@"};
+inline constexpr std::string_view version{"@PROJECT_VERSION@"};
+inline constexpr std::string_view revision{"@TIMETRANSLE_BUILD_REVISION@"};
+inline constexpr std::string_view architecture{"@TIMETRANSLE_BUILD_ARCHITECTURE@"};
+inline constexpr std::string_view build_id{"@TIMETRANSLE_BUILD_ID@"};
+
+}  // namespace timetransle::build_info
+

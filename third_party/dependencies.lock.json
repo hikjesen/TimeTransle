@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-26",
+  "policy": {
+    "productionDependenciesMustBeExact": true,
+    "fetchDuringStage1": false,
+    "licensesMustBeIncludedBeforeDistribution": true
+  },
+  "dependencies": [
+    {
+      "name": "MinHook",
+      "version": "1.3.4",
+      "revision": "c3fcafdc10146beb5919319d0683e44e3c30d537",
+      "source": "https://github.com/TsudaKageyu/minhook",
+      "license": "BSD-2-Clause",
+      "scope": "native-runtime"
+    },
+    {
+      "name": "nlohmann/json",
+      "version": "3.12.0",
+      "revision": "65ee68451d8eb2b5f3a30b410476ab83deb3289b",
+      "source": "https://github.com/nlohmann/json",
+      "license": "MIT",
+      "scope": "native-runtime"
+    },
+    {
+      "name": "Catch2",
+      "version": "3.15.0",
+      "revision": "b8acae26b0453dad6250447ad32f6b0015b162ae",
+      "source": "https://github.com/catchorg/Catch2",
+      "license": "BSL-1.0",
+      "scope": "native-test"
+    },
+    {
+      "name": "Microsoft.Web.WebView2",
+      "version": "1.0.3856.49",
+      "source": "https://www.nuget.org/packages/Microsoft.Web.WebView2/1.0.3856.49",
+      "license": "Microsoft.WebView2",
+      "scope": "native-runtime"
+    },
+    {
+      "name": "React",
+      "version": "19.2.8",
+      "source": "https://www.npmjs.com/package/react/v/19.2.8",
+      "license": "MIT",
+      "scope": "ui-runtime"
+    },
+    {
+      "name": "React DOM",
+      "version": "19.2.8",
+      "source": "https://www.npmjs.com/package/react-dom/v/19.2.8",
+      "license": "MIT",
+      "scope": "ui-runtime"
+    },
+    {
+      "name": "@base-ui/react",
+      "version": "1.6.0",
+      "source": "https://www.npmjs.com/package/@base-ui/react/v/1.6.0",
+      "license": "MIT",
+      "scope": "ui-runtime"
+    },
+    {
+      "name": "Motion",
+      "version": "12.42.2",
+      "source": "https://www.npmjs.com/package/motion/v/12.42.2",
+      "license": "MIT",
+      "scope": "ui-runtime"
+    },
+    {
+      "name": "@number-flow/react",
+      "version": "0.6.2",
+      "source": "https://www.npmjs.com/package/@number-flow/react/v/0.6.2",
+      "license": "MIT",
+      "scope": "ui-runtime"
+    },
+    {
+      "name": "Sonner",
+      "version": "2.0.7",
+      "source": "https://www.npmjs.com/package/sonner/v/2.0.7",
+      "license": "MIT",
+      "scope": "ui-runtime"
+    },
+    {
+      "name": "Vite",
+      "version": "8.1.5",
+      "source": "https://www.npmjs.com/package/vite/v/8.1.5",
+      "license": "MIT",
+      "scope": "ui-build"
+    },
+    {
+      "name": "TypeScript",
+      "version": "5.9.3",
+      "source": "https://www.npmjs.com/package/typescript/v/5.9.3",
+      "license": "Apache-2.0",
+      "scope": "ui-build"
+    },
+    {
+      "name": "Vitest",
+      "version": "4.1.10",
+      "source": "https://www.npmjs.com/package/vitest/v/4.1.10",
+      "license": "MIT",
+      "scope": "ui-test"
+    },
+    {
+      "name": "Ajv",
+      "version": "8.20.0",
+      "source": "https://www.npmjs.com/package/ajv/v/8.20.0",
+      "license": "MIT",
+      "scope": "ui-test"
+    }
+  ]
+}

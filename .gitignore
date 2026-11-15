@@ -1,0 +1,30 @@
+# CMake and Visual Studio output
+/out/
+/.vs/
+/CMakeUserPresets.json
+*.user
+*.suo
+
+# Frontend output
+/ui/node_modules/
+/ui/dist/
+/ui/coverage/
+*.tsbuildinfo
+
+# Runtime output
+/logs/
+*.log
+*.dmp
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+
+
+# Local agent tooling, working notes and reference captures
+/.agents/
+/.zcode/
+/skills-lock.json
+/timetransle-360-main.png
+/图片（不重要）/
